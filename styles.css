@@ -1,145 +1,142 @@
-
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    color: #333;
-    background: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-bottom: 60px; /* Ensures footer doesn't overlap content */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
 header {
-    background: #0044cc;
+    background: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-    animation: fadeInHeader 2s ease-out;
+    padding: 1rem 0;
+    position: fixed; /* Keep header fixed at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is above other content */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2rem;
 }
 
 header p {
     margin: 0;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin-right: 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    background: #555;
+    border-radius: 4px;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 2px;
-    width: 0;
-    background: #ffcc00;
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+/* Main Content Styles */
+main {
+    padding: 5rem 0; /* Adjusted to account for fixed header */
 }
 
 section {
-    padding: 20px;
-    margin: 10px 0;
+    margin-bottom: 2rem;
+    padding: 2rem;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    animation: fadeInSection 1s ease-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-section h2 {
-    border-bottom: 2px solid #0044cc;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    animation: slideIn 0.5s ease-out;
-}
-
-section p {
-    line-height: 1.6;
-    margin: 0;
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 ul {
-    padding-left: 20px;
+    margin: 1rem 0;
 }
 
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
 footer {
-    background: #0044cc;
+    background: #333;
     color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    padding: 10px 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
-    animation: fadeInFooter 2s ease-out;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
-/* Keyframes for animations */
-
-@keyframes fadeInHeader {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+footer p {
+    margin: 0;
 }
 
-@keyframes fadeInSection {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes slideIn {
-    from {
-        transform: translateX(-10px);
-        opacity: 0;
+    nav ul li {
+        display: block;
+        margin: 0;
     }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
-@keyframes fadeInFooter {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #555;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .container {
+        width: 95%;
     }
 }
