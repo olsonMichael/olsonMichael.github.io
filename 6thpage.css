@@ -1,0 +1,11 @@
+html, body {
+  background: green;
+}
+h1 {
+  text-align:center;
+}
+img {
+  width: 50%;
+  margin-left:33%;
+  margin-right: 0%;
+}
