@@ -1,0 +1,10 @@
+html, body {
+  background: purple ;
+}
+h1 {
+  text-align: center;
+}
+img {
+  margin-left: 35%;
+  margin-right: 0%;
+}
