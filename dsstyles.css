@@ -1,14 +1,19 @@
+/* styles.css */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    font-family: Arial, sans-serif;
+    background: conic-gradient(
+        #051826 0%,
+        #051826 63%,
+        #010717 100%
+    );
+    height: 100vh; /* Ensure the gradient fills the viewport */
+    margin: 0; /* Remove default margin */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    color: white; /* Optional: Set text color to contrast with background */
+    font-family: Arial, sans-serif; /* Optional: Add a default font */
 }
+
 
 #top-image {
     width: 150px; /* Adjust size as needed */
