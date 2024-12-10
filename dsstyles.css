@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     background: conic-gradient(
         #051826 0%,
@@ -8,22 +7,24 @@ body {
     height: 100vh; /* Ensure the gradient fills the viewport */
     margin: 0; /* Remove default margin */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Change flex direction to column */
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
     color: white; /* Optional: Set text color to contrast with background */
     font-family: Arial, sans-serif; /* Optional: Add a default font */
 }
 
-
 #top-image {
-    width: 150px; /* Adjust size as needed */
-    margin-bottom: 20px;
+    width: 100%; /* Stretch the image across the top */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the space */
 }
 
 #search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Add spacing below the image */
 }
 
 #search-bar {
