@@ -17,7 +17,7 @@ body {
 #top-image {
     width: 100%; /* Stretch the image across the top */
     height: 30%; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the space */
+ /* Ensure the image covers the space */
 }
 
 #search-container {
