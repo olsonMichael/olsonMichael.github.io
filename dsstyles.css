@@ -15,8 +15,8 @@ body {
 }
 
 #top-image {
-    width: 50%; /* Stretch the image across the top */
-    height: 30%; /* Maintain aspect ratio */
+    width: 1000px; /* Stretch the image across the top */
+    height: 250px; /* Maintain aspect ratio */
  /* Ensure the image covers the space */
 }
 
