@@ -46,18 +46,13 @@ const foodCategories = {
 
 // Add an event listener for the 'keypress' event
 searchBar.addEventListener('keypress', (event) => {
-    // Check if the pressed key is 'Enter'
     if (event.key === 'Enter') {
-        // Get the value entered in the search bar
         const query = searchBar.value.trim();
-
-        // Check if the category exists
         if (foodCategories[query]) {
-            // Redirect to a new page with the results
-            const resultsPage = window.open('', '_blank');
-            resultsPage.document.write(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${query} Restaurants</title></head><body><h1>Restaurants offering ${query}</h1><ul>${foodCategories[query].map(restaurant => `<li>${restaurant}</li>`).join('')}</ul></body></html>`);
+            // Redirect to 'page.html' with the query as a URL parameter
+            const queryParam = encodeURIComponent(query);
+            window.location.href = `page.html?category=${queryParam}`;
         } else {
-            // Prompt the user for another input
             alert('No results found. Please enter a valid category.');
         }
     }
