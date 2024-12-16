@@ -40,7 +40,6 @@ const foodCategories = {
     "Empanadas": ["No Manches", "Dos Amigos Mexican Restaurant", "The Mixto Cuisine", "Austin's Restaurant"],
     "Burritos": ["No Manches", "La Mera Mera", "Dos Amigos Mexican Restaurant", "The Mixto Cuisine", "Austin's Restaurant"]
 };
-// Function to extract query parameters from the URL
 function getQueryParameter(name) {
     const params = new URLSearchParams(window.location.search);
     return params.get(name);
@@ -50,7 +49,10 @@ function getQueryParameter(name) {
 const category = getQueryParameter('category');
 
 if (category && foodCategories[category]) {
+    // Set the title to match the category
     document.getElementById('category-title').textContent = `Restaurants offering ${category}`;
+    
+    // Populate the list of restaurants
     const listElement = document.getElementById('restaurant-list');
     foodCategories[category].forEach(restaurant => {
         const listItem = document.createElement('li');
@@ -58,5 +60,6 @@ if (category && foodCategories[category]) {
         listElement.appendChild(listItem);
     });
 } else {
+    // Display a message if no valid category is found
     document.body.innerHTML = '<h1>No results found. Please go back and try again.</h1>';
 }
