@@ -50,7 +50,7 @@ const category = getQueryParameter('category');
 
 if (category && foodCategories[category]) {
     // Set the title to match the category
-    document.getElementById('category-title').textContent = `Restaurants offering ${category}`;
+    document.getElementById('category-title').textContent = `Restaurants with "${category}" on their menu. That's a great choice!`;
     
     // Populate the list of restaurants
     const listElement = document.getElementById('restaurant-list');
