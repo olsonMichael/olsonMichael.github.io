@@ -1,15 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-    <link rel="stylesheet" href="dsstyles.css">
-</head>
-<body>
-    <h1 id="category-title"></h1>
-    <ul id="restaurant-list"></ul>
-    <script src="results.js"></script>
-</body>
-</html>
+// Data structure for food categories and restaurants
+const foodCategories = {
+    "Chips": ["Lazy Dog", "Dos Amigos Mexican Restaurant", "Austin's Restaurant"],
+    "French Fries": ["Lazy Dog", "SLYCE Coal Fired Pizza Company", "The Mixto Cuisine", "Austin's Restaurant"],
+    "Tater Tots": ["Lazy Dog", "Feather Glass Wine Bar & Eatery"],
+    "Biscuits": ["Lazy Dog", "Mambo Italiano"],
+    "Mozzarella Sticks": ["Wick N Ore", "Tangled Roots", "Mambo Italiano"],
+    "Egg Rolls": ["Wick N Ore", "Feather Glass Wine Bar & Eatery"],
+    "Pretzel Bites": ["Wick N Ore", "City Works", "Feather Glass Wine Bar & Eatery"],
+    "Cheese Curds": ["Lazy Dog", "City Works", "SLYCE Coal Fired Pizza Company", "Mickey Finn's"],
+    "Seafood Stuffed Mushrooms": ["Perry's Steakhouse & Grille"],
+    "Soup": ["Lazy Dog", "Wick N Ore", "Tangled Roots", "Feather Glass Wine Bar & Eatery", "Mambo Italiano", "Mickey Finn's", "Main Street Social", "Austin's Restaurant"],
+    "Salad": ["Lazy Dog", "City Works", "Wick N Ore", "Tangled Roots", "No Manches", "Feather Glass Wine Bar & Eatery", "SLYCE Coal Fired Pizza Company", "Crisp & Green", "The Mixto Cuisine", "Mickey Finn's", "Main Street Social", "Eddie Merlot's", "Austin's Restaurant"],
+    // Add other categories as necessary...
+};
 
+// Function to extract query parameters from the URL
+function getQueryParameter(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+// Get the category from the URL
+const category = getQueryParameter('category');
+
+if (category && foodCategories[category]) {
+    // Set the title to match the category
+    document.getElementById('category-title').textContent = `Restaurants offering ${category}`;
+    
+    // Populate the list of restaurants
+    const listElement = document.getElementById('restaurant-list');
+    foodCategories[category].forEach(restaurant => {
+        const listItem = document.createElement('li');
+        listItem.textContent = restaurant;
+        listElement.appendChild(listItem);
+    });
+} else {
+    // Display a message if no valid category is found
+    document.body.innerHTML = '<h1>No results found. Please go back and try again.</h1>';
+}
